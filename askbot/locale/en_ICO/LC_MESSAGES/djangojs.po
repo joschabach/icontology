@@ -300,3 +300,11 @@ msgstr "Please choose and upload a file:"
 
 #~ msgid "edit"
 #~ msgstr "edit"
+
+#: media/js/live_search.js:157
+msgid "Ask Your Question"
+msgstr "Add a Term"
+
+#: media/js/live_search.js:295
+msgid "search or ask your question"
+msgstr "search or add a term"

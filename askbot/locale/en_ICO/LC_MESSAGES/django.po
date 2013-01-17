@@ -3533,7 +3533,7 @@ msgstr "Term favorited by %(num)s users"
 
 #: models/badges.py:689
 msgid "Stellar Question"
-msgstr "Super Term"
+msgstr "Supreme Term"
 
 #: models/badges.py:698
 msgid "Favorite Question"
@@ -6700,3 +6700,9 @@ msgstr ""
 #~ "the most interesting questions. Also, when you sign up for the first time "
 #~ "- create a unique <a href='%(gravatar_faq_url)s'><strong>gravatar</"
 #~ "strong></a> personal image.</p>"
+
+#: templates/widgets/tag_selector.html:57
+msgid "Show only questions from"
+msgstr "Show only terms from"
+
+
