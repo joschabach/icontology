@@ -7,21 +7,23 @@
         </div>
     </div>
 {% endif %}
-{% if editor_type == 'markdown' %}
-    <div class="wmd-container">
-        <div id="wmd-button-bar" class="wmd-panel"></div>
-        {{ post_form.text }}{# this element is resizable and will be wrapped by js #}
-    </div>
-{% else %}
-    <div class="wmd-container">
-        {{ post_form.media }}
-        {{ post_form.text }}
-    </div>
-    <script type="text/javascript">
-        {% if post_html %}
-            askbot['data']['editorContent'] = '{{ post_html|escapejs }}';
-        {% endif %}
-    </script>
+{% if post_type != 'question' %}
+    {% if editor_type == 'markdown'%}
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-panel"></div>
+            {{ post_form.text }}{# this element is resizable and will be wrapped by js #}
+        </div>
+    {% else %}
+        <div class="wmd-container">
+            {{ post_form.media }}
+            {{ post_form.text }}
+        </div>
+        <script type="text/javascript">
+            {% if post_html %}
+                askbot['data']['editorContent'] = '{{ post_html|escapejs }}';
+            {% endif %}
+        </script>
+    {% endif %}
 {% endif %}
 <div class="form-item">
     <label for="editor" class="form-error">{{ post_form.text.errors }}</label>
@@ -74,7 +76,7 @@
     </div>
 {% endif %}
 
-{% if editor_type == 'markdown' %}
+{% if editor_type == 'markdown' and post_type != 'question' %}
     <div class="preview-toggle">
         <span 
             id="pre-collapse" 
